@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hernán Escriba – Perfil Profesional</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      padding: 2rem;
+    }
+
+    .top-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .top-logo img {
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .top-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .contenido {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .foto-perfil {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid white;
+    }
+
+    .nombre {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+    }
+
+    .btn-cv {
+      margin-top: 20px;
+    }
+
+    .accordion {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+
+    .accordion-item {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .accordion-button {
+      background-color: rgba(44, 83, 100, 0.6);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 10px 10px 0 0;
+      box-shadow: none;
+    }
+
+    .accordion-button:hover {
+      background-color: rgba(60, 130, 180, 0.7);
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: rgba(60, 130, 180, 0.9);
+      color: #fff;
+    }
+
+    .accordion-body {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #e0e0e0;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGO EN ESQUINA SUPERIOR IZQUIERDA -->
+  <div class="top-logo">
+    <a href="/">
+      <img src="{{ url_for('static', filename='logo_hernanescorp.png') }}" alt="Inicio HernanesCorp">
+    </a>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="contenido">
+    <img src="{{ url_for('static', filename='hernan_cv.png') }}" alt="Foto de Hernán Escriba" class="foto-perfil">
+    <h1 class="nombre">Hernán Escriba Najarro</h1>
+    <p class="lead mt-2">
+      Ingeniero y Analista de Datos con formación en Tecnología Industrial. Aplico soluciones de automatización y análisis con Python, SQL, Power BI, SAP y Microsoft Fabric. Me especializo en convertir datos en decisiones reales, en entornos industriales exigentes.
+    </p>
+
+    <a href="/static/Escriba_Najarro_Hernan.pdf" class="btn btn-light btn-lg btn-cv" download>
+      📄 Descargar CV
+    </a>
+  </div>
+
+  <!-- ACORDEÓN -->
+  <div class="accordion" id="accordionCV">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="formacionHeading">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#formacion">
+          🎓 Formación Académica
+        </button>
+      </h2>
+      <div id="formacion" class="accordion-collapse collapse show" data-bs-parent="#accordionCV">
+        <div class="accordion-body">
+          <ul>
+            <li>Ingeniería en Tecnología Industrial – Universidad del País Vasco</li>
+            <li>Certificaciones en Python, Ciencia de Datos y Machine Learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="experienciaHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#experiencia">
+          💼 Experiencia Profesional
+        </button>
+      </h2>
+      <div id="experiencia" class="accordion-collapse collapse" data-bs-parent="#accordionCV">
+        <div class="accordion-body">
+          <ul>
+            <li>Analista e Ingeniero de Datos – Maier (2024–Presente)</li>
+            <li>Investigador y diseño en Ansys – Technische Universität Dresden</li>
+            <li>Sistema de Monitorizacion Energetico - Ingenieria sin Fronteras</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="habilidadesHeading">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#habilidades">
+          🛠️ Habilidades Técnicas
+        </button>
+      </h2>
+      <div id="habilidades" class="accordion-collapse collapse" data-bs-parent="#accordionCV">
+        <div class="accordion-body">
+          <p>Python, SQL, Power BI, SAP, Excel avanzado, Flask, Microsoft Fabric, Automatización con n8n.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

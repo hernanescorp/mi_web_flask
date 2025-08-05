@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graxiano | Soluciones Inteligentes</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Barlow', sans-serif;
+      background: #0f2027;
+      color: white;
+      padding: 2rem;
+      line-height: 1.8;
+      font-size: 1.2rem;
+    }
+
+    .top-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .top-logo img {
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .top-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header img {
+      width: 130px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      font-weight: 300;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto 3rem auto;
+      padding: 2rem;
+      background-color: #ffffff10;
+      border-radius: 15px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    /* Acordeón horizontal con galería */
+    .accordion-button {
+      background-color: #1c2b33;
+      color: white;
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-button:hover {
+      background-color: #29414d;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 0;
+    }
+
+    .accordion-content.open {
+      padding: 1rem 0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+
+    .gallery img {
+      height: 480px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .gallery img {
+        height: auto;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo superior -->
+  <div class="top-logo">
+    <a href="/">
+      <img src="{{ url_for('static', filename='logo_hernanescorp.png') }}" alt="Inicio HernanesCorp" />
+    </a>
+  </div>
+
+  <header>
+    <img src="{{ url_for('static', filename='logo_graxiano.png') }}" alt="Logo Graxiano" />
+    <h1>Graxiano</h1>
+    <p>Soluciones inteligentes para empresas que quieren crecer con datos.</p>
+  </header>
+
+  <div class="section">
+    <h2>¿Qué hacemos?</h2>
+    <p>En <strong>Graxiano</strong>, ayudamos a las empresas a optimizar sus procesos, automatizar tareas repetitivas y tomar decisiones basadas en datos reales. Aplicamos tecnología inteligente y herramientas open source para brindar soluciones eficientes, escalables y adaptadas a tu negocio.</p>
+  </div>
+
+  <div class="section">
+    <h2>Servicios</h2>
+    <ul>
+      <li><strong>Ingeniería de datos:</strong> Extracción, canalización, limpieza, transformación y almacenamiento eficiente de datos.</li>
+      <li><strong>Automatización:</strong> Flujos con n8n y otras herramientas; chatbots, WhatsApp, Telegram, Google Calendar, reservas y más.</li>
+      <li><strong>Análisis de datos:</strong> Dashboards o paneles de control de stock, reportes automáticos para gerentes y operarios.</li>
+      <li><strong>Web & soporte:</strong> Desarrollo de páginas web funcionales con mantenimiento continuo.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Proyectos por servicio</h2>
+
+    <!-- Acordeón 1 -->
+    <button class="accordion-button" onclick="toggleAccordion(this)">🛠️ Ingeniería de datos <span>▶️</span></button>
+    <div class="accordion-content">
+      <div class="gallery">
+        <img src="{{ url_for('static', filename='ingenieria_datos/mysql_db.png') }}" alt="MySQL DB" />
+        <img src="{{ url_for('static', filename='ingenieria_datos/mysql_to_vps.png') }}" alt="MySQL to VPS" />
+        <img src="{{ url_for('static', filename='ingenieria_datos/sheets_db.png') }}" alt="Sheets DB" />
+      </div>
+    </div>
+
+    <!-- Acordeón 2 -->
+    <button class="accordion-button" onclick="toggleAccordion(this)">⚙️ Automatización <span>▶️</span></button>
+    <div class="accordion-content">
+      <div class="gallery">
+        <img src="{{ url_for('static', filename='Automatizaciones/flujo_asistente_calendar_terminado.png') }}" alt="Calendario" />
+        <img src="{{ url_for('static', filename='Automatizaciones/tools_AI_agent.png') }}" alt="AI Agent" />
+      </div>
+    </div>
+
+    <!-- Acordeón 3 -->
+    <button class="accordion-button" onclick="toggleAccordion(this)">📊 Análisis de datos <span>▶️</span></button>
+    <div class="accordion-content">
+      <div class="gallery">
+        <img src="{{ url_for('static', filename='analisis_datos/analisis_2_web.png') }}" alt="Dashboard 1" />
+        <img src="{{ url_for('static', filename='analisis_datos/analisis_web.png') }}" alt="Dashboard 2" />
+      </div>
+    </div>
+
+    <!-- Acordeón 4 -->
+    <button class="accordion-button" onclick="toggleAccordion(this)">🌐 Desarrollo web <span>▶️</span></button>
+    <div class="accordion-content">
+      <div class="gallery">
+        <img src="{{ url_for('static', filename='web_dev/web_dev.png') }}" alt="Sitio Web" />
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Tecnologías</h2>
+    <p>Python, SQL, Power BI, SAP, Microsoft Fabric, Excel, n8n, Flask, Pandas, Matplotlib, herramientas de IA y más.</p>
+  </div>
+
+  <!-- Botón vistoso para contacto -->
+  <div class="section" style="text-align: center;">
+    <a class="btn" href="/contacto">📨 Formulario de contacto</a>
+  </div>
+
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+      const allButtons = document.querySelectorAll('.accordion-button');
+      const allContents = document.querySelectorAll('.accordion-content');
+
+      allButtons.forEach(btn => btn.querySelector('span').textContent = '▶️');
+      allContents.forEach(c => {
+        c.classList.remove('open');
+        c.style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        content.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + "px";
+        button.querySelector('span').textContent = '🔽';
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HernanEsCorp</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 2rem;
+        }
+        header img {
+            width: 150px;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #ffffff10;
+            border: 1px solid #ffffff20;
+            border-radius: 20px;
+            padding: 2rem;
+            width: 280px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #ffffff20;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            color: #000;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="{{ url_for('static', filename='logo_hernanescorp.png') }}" alt="Logo HernanesCorp">
+        </a>
+        <h1>HernanEsCorp</h1>
+        <p>Innovación, Datos y Soluciones para el futuro</p>
+    </header>
+
+    <section class="cards">
+        <div class="card">
+            <h2>Hernán Escriba</h2>
+            <p>Perfil personal, experiencia y formación profesional.</p>
+            <a href="/hernan">Explorar</a>
+        </div>
+        <div class="card">
+            <h2>Graxiano</h2>
+            <p>Servicios de análisis de datos y automatización para empresas.</p>
+            <a href="/graxiano">Ir a servicios</a>
+        </div>
+        <div class="card">
+            <h2>Data&Date</h2>
+            <p>Un espacio en redes para conectar datos con personas. (Próximamente)</p>
+            <a href="/dataanddate">Ver más</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 HernanesCorp. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
